@@ -2,6 +2,7 @@
 #define TRIANGLE_H
 
 #include <QVector3D>
+#include <point.h>
 
 class Triangle
 {

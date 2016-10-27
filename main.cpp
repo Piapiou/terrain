@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     // Pour les TP de modélisation avancé.
 
     Turbulence T = Turbulence();
-    Mesh m = Terrain(Point(-2000.0f,-2000.0f,0.0f),Point(2000.0f,2000.0f,0.0f),T,2000,2000).toMesh();
+    Mesh m = Terrain(Point(-2000.0f,-2000.0f,0.0f),Point(2000.0f,2000.0f,0.0f),T,100,100).toMesh();
     m.toOBJ("C:/Users/toshiba/Desktop/test.obj");
 
     return 0;

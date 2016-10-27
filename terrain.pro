@@ -17,7 +17,8 @@ SOURCES += main.cpp \
     trianglecirculator.cpp \
     triangleiterator.cpp \
     turbulence.cpp \
-    vector3d.cpp
+    vector3d.cpp \
+    soil.cpp
 
 LIBS += -lopengl32
 
@@ -51,4 +52,5 @@ HEADERS += \
     trianglecirculator.h \
     triangleiterator.h \
     turbulence.h \
-    vector3d.h
+    vector3d.h \
+    soil.h

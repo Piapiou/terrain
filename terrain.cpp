@@ -32,7 +32,6 @@ Terrain::Terrain(const Point p1, const Point p2, Turbulence T, int length, int w
 
 void Terrain::setSoil() {
 
-
 }
 
 Mesh Terrain::toMesh() {
