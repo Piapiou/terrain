@@ -22,7 +22,6 @@ Terrain::Terrain(const Point p1, const Point p2, Turbulence T, int length, int w
         soil[i] = 0;
     }
 
-
     for(int i = 0; i < length; i++){
         for(int j = 0; j < width; j++){
             bedrock[i*width+j] = T.eval((b.x()-a.x())*i/length+a.x(),(b.y()-a.y())*j/width+a.y());
@@ -30,8 +29,12 @@ Terrain::Terrain(const Point p1, const Point p2, Turbulence T, int length, int w
     }
 }
 
-void Terrain::setSoil() {
+void Terrain::setSoilAt(float i, float j, float h) {
+    soil[i*width+j] = h;
+}
 
+float Terrain::getBedrockAt(float i, float j) {
+    return bedrock[i*width+j];
 }
 
 Mesh Terrain::toMesh() {
