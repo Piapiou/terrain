@@ -7,7 +7,6 @@ class Soil
 {
 public:
     Soil(float maxSoil);
-    void rotateKernel();
 
 private:
     float maxSoil;
