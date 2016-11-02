@@ -11,7 +11,8 @@ class Terrain
 {
 public:
     Terrain(const Point p1, const Point p2, Turbulence T, int length, int width);
-    void setSoil();
+    void setSoilAt(float i, float j, float h);
+    void getBedrockAt(float i, float j);
     Mesh toMesh();
 
 private:
