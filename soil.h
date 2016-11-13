@@ -2,14 +2,18 @@
 #define SOIL_H
 
 #include <QVector>
+#include <terrain.h>
 
 class Soil
 {
 public:
-    Soil(float maxSoil);
+    Soil(Terrain * T, float maxSoil, float facteurDiffSoil);
+    void setSoil(int x, int y);
 
 private:
     float maxSoil;
+    float fDiffSoil;
+    Terrain * T;
 
 };
 

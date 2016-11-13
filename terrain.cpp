@@ -1,4 +1,5 @@
-#include "terrain.h"
+#include <terrain.h>
+#include <soil.h>
 #include <math.h>
 #include <QImage>
 #include <iostream>
@@ -6,11 +7,11 @@
 
 Terrain::Terrain(const Point p1, const Point p2, Turbulence T, int length, int width)
 {
-
     std::cout << "Building terrain "<< width <<"x"<< length <<"...\n" << std::flush;
     bedrock = QVector<float>(length*width);
     soil = QVector<float>(length*width);
-    water = QVector<float>(length*width);
+    flowmap = QVector<float>(length*width);
+    es = Ecosystem();
 
     a = Point(p1);
     b = Point(p2);
@@ -29,12 +30,84 @@ Terrain::Terrain(const Point p1, const Point p2, Turbulence T, int length, int w
     }
 }
 
-void Terrain::setSoilAt(float i, float j, float h) {
-    soil[i*width+j] = h;
+void Terrain::initSoil(float maxSoil, float facteurDiffSoil) {
+
+    std::cout << "Set soil...\n" << std::flush;
+    Soil s = Soil(this, maxSoil, facteurDiffSoil);
+    for (int i = 0; i < width; i++) {
+        for (int j = 0; j < length; j++) {
+            s.setSoil(i,j);
+        }
+    }
 }
 
-float Terrain::getBedrockAt(float i, float j) {
+void Terrain::makeFlowMap(int nbIteration) {
+
+    std::cout << "Set flowmap...\n" << std::flush;
+    Flowmap flow = Flowmap(this,nbIteration);
+    flow.generateFlowMap();
+}
+
+void Terrain::addFlowMap(int x, int y, float z) {
+    flowmap[x*width+y] += z;
+}
+
+float Terrain::getFlowMap(int x, int y) {
+    return flowmap[x*width+y];
+}
+
+void Terrain::setFlowMap(int x, int y, float z) {
+    flowmap[x*width+y] = z;
+}
+
+int Terrain::getWidth() {
+    return width;
+}
+
+int Terrain::getLength() {
+    return length;
+}
+
+float Terrain::getWidthRatio() {
+    return std::abs(a.x()-b.x())/width;
+}
+
+float Terrain::getLengthRatio() {
+    return std::abs(a.y()-b.y())/length;
+}
+
+void Terrain::setSoilAt(int i, int j, float h) {
+    soil[i*width+j] = h;    
+}
+
+float Terrain::getBedrockAt(int i, int j) {
     return bedrock[i*width+j];
+}
+
+float Terrain::getSoilAmountAt(int i, int j) {
+    return soil[i*width+j];
+}
+
+float Terrain::getSoilLevelAt(int i, int j) {
+    return bedrock[i*width+j]+soil[i*width+j];
+}
+
+Point* Terrain::getOrigin() {
+    return &a;
+}
+
+void Terrain::simulateEcosystem(int time) {
+
+    std::cout <<"Start generating Ecosystem\n" << std::flush;
+    es.init(1000,this);
+    es.exportImg(QString::asprintf("C:/Users/toshiba/Desktop/ES/eco0.bmp"));
+
+    std::cout <<"Simulating Ecosystem\n" << std::flush;
+    for (int i = 0; i < time; i++) {
+        es.step();
+        if (i%10 == 9)
+            es.exportImg(QString::asprintf("C:/Users/toshiba/Desktop/ES/eco%d.bmp",i+1));
+    }
 }
 
 Mesh Terrain::toMesh() {
@@ -59,4 +132,52 @@ Mesh Terrain::toMesh() {
         }
     }
     return m;
+}
+
+void Terrain::saveHeightImg(QString s) {
+
+    float max = 0.0;
+    for(int i = 0; i < length; i++){
+        for(int j = 0; j < width; j++){
+            max = std::max(max,bedrock[i*width+j]+soil[i*width+j]);
+        }
+    }
+
+    std::cout << "Export height img...\n" <<  std::flush;
+    QImage img = QImage(length,width,QImage::Format_RGB32);
+
+    for(int i = 0; i < length; i++){
+        for(int j = 0; j < width; j++){
+            img.setPixelColor(i,j,QColor((bedrock[i*width+j]+soil[i*width+j])/max*255,(bedrock[i*width+j]+soil[i*width+j])/max*255,(bedrock[i*width+j]+soil[i*width+j])/max*255));
+        }
+    }
+    img.save(s);
+}
+
+void Terrain::saveSoilImg(QString s) {
+
+    std::cout << "Export Soil img...\n" <<  std::flush;
+
+    QImage img = QImage(length,width,QImage::Format_RGB32);
+
+    for(int i = 0; i < length; i++){
+        for(int j = 0; j < width; j++){
+            img.setPixelColor(i,j,QColor(soil[i*width+j],0,0));
+        }
+    }
+    img.save(s);
+}
+
+void Terrain::saveFlowmapImg(QString s) {
+
+    std::cout << "Export flowmap img...\n" <<  std::flush;
+
+    QImage img = QImage(length,width,QImage::Format_RGB32);
+
+    for(int i = 0; i < length; i++){
+        for(int j = 0; j < width; j++){
+            img.setPixelColor(i,j,QColor(0,0,flowmap[i*width+j]*255));
+        }
+    }
+    img.save(s);
 }

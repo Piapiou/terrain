@@ -5,7 +5,7 @@ PerlinUni::PerlinUni()
 {
     img = QImage(":/img/terrain3.png");
 }
-
+/*
 Point bezier (Point p1, Point p2, float d) {
     QVector<Point> p = QVector<Point>();
     p.append(Point(p1));
@@ -27,8 +27,7 @@ Point bezier (Point p1, Point p2, float d) {
 //                                                      p[0].x(),p[0].y(),p[0].z());
 
     return Point(p[0]);
-
-}
+}*/
 
 float PerlinUni::eval(float x, float y) {
 
@@ -38,26 +37,23 @@ float PerlinUni::eval(float x, float y) {
     float dx = 1-(x - (int)x);
     float dy = 1-(y - (int)y);
 
-
+    dx = 3*dx*dx - 2*dx*dx*dx;
+    dy = 3*dy*dy - 2*dy*dy*dy;
 
     // Traitement
-    // Convolution linéaire
-    //float pixel1 = (float)img.pixelColor((int)x%img.width(),(int)y%img.height()).red()*dx*dy;
-    //float pixel2 = (float)img.pixelColor((int)(x+1)%img.width(),(int)y%img.height()).red()*(1.0-dx)*dy;
-    //float pixel3 = (float)img.pixelColor((int)x%img.width(),(int)(y+1)%img.height()).red()*dx*(1.0-dy);
-    //float pixel4 = (float)img.pixelColor((int)(x+1)%img.width(),(int)(y+1)%img.height()).red()*(1.0-dx)*(1.0-dy);
-    //float pixel = pixel1 + pixel2 + pixel3 + pixel4;
+    float pixel1 = (float)img.pixelColor((int)x%img.width(),(int)y%img.height()).red()*dx*dy;
+    float pixel2 = (float)img.pixelColor((int)(x+1)%img.width(),(int)y%img.height()).red()*(1.0-dx)*dy;
+    float pixel3 = (float)img.pixelColor((int)x%img.width(),(int)(y+1)%img.height()).red()*dx*(1.0-dy);
+    float pixel4 = (float)img.pixelColor((int)(x+1)%img.width(),(int)(y+1)%img.height()).red()*(1.0-dx)*(1.0-dy);
+    float pz = pixel1 + pixel2 + pixel3 + pixel4;
 
-    // Convolution bezier
-    float pixel1 = (float)img.pixelColor((int)x%img.width(),(int)y%img.height()).red();
-    float pixel2 = (float)img.pixelColor((int)(x+1)%img.width(),(int)y%img.height()).red();
-    float pixel3 = (float)img.pixelColor((int)x%img.width(),(int)(y+1)%img.height()).red();
-    float pixel4 = (float)img.pixelColor((int)(x+1)%img.width(),(int)(y+1)%img.height()).red();
-    Point p1 = bezier(Point((int)x%img.width(),(int)y%img.height(),pixel1),Point((int)(x+1)%img.width(),(int)y%img.height(),pixel2),dx);
-    Point p2 = bezier(Point((int)x%img.width(),(int)(y+1)%img.height(),pixel3),Point((int)(x+1)%img.width(),(int)(y+1)%img.height(),pixel4),dx);
-    Point pz = bezier(p1,p2,dy);
+    float pixel = pz/255;
 
-    float pixel = pz.z()/255;
+    float seuil = 0.95;
+
+    if (pixel > seuil) {
+        pixel = seuil*2-pixel;
+    }
 
     return pixel;
 }
