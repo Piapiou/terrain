@@ -41,26 +41,26 @@ public:
     int z();
 
     /**
-     * Définit l'égalité entre deux triangles.
+     * Définission de l'égalité entre deux triangles.
      */
     Triangle operator=(Triangle t);
 
     /**
-     * Affecte l'indice du point opposé du premier triangle adjacent.
+     * Définit l'indice du point opposé du premier triangle adjacent.
      * L'indice doit correspondre à un point du vecteur de l'ensemble des points.
      * @param i : Indice du point opposé
      */
     void setAdj1(int i);
 
     /**
-     * Affecte l'indice du point opposé du deuxième triangle adjacent.
+     * Définit l'indice du point opposé du deuxième triangle adjacent.
      * L'indice doit correspondre à un point du vecteur de l'ensemble des points.
      * @param i : Indice du point opposé
      */
     void setAdj2(int i);
 
     /**
-     * Affecte l'indice du point opposé du troisième triangle adjacent.
+     * Définit l'indice du point opposé du troisième triangle adjacent.
      * L'indice doit correspondre à un point du vecteur de l'ensemble des points.
      * @param i : Indice du point opposé
      */

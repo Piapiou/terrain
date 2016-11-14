@@ -14,12 +14,12 @@ public:
      * Isntancie une couche de Sédiments
      * @param T : Terrain à sédimenter
      * @param maxSoil : Hauteur maximum de la couche de sédiments
-     * @param facteurDiffSoil : ???
+     * @param facteurDiffSoil : Rapport entre l'inclinaison du terrain et la quantité de sédiments présents
      */
     Soil(Terrain * T, float maxSoil, float facteurDiffSoil);
 
     /**
-     * Calcule et affecte la hauteur des sédiments en un point donné du terrain.
+     * Calcule et définit la hauteur des sédiments en un point donné du terrain.
      * @param x : Abscisse du point du terrain
      * @param y : Ordonnée du point du terrain
      */
