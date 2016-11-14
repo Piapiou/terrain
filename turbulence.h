@@ -23,7 +23,7 @@ public:
     /**
      * @brief Évalue la valeur d'une turbulence en un point donné.
      * @param x : Abscisse du point à évaluer
-     * @param y : Profondeur du point à évaluer
+     * @param y : Ordonnée du point à évaluer
      * @return Hauteur du point évalué
      */
     float eval(float x, float y);
