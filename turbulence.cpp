@@ -1,6 +1,7 @@
 #include "turbulence.h"
 #include <iostream>
 
+
 Turbulence::Turbulence()
 {
     vp = QVector<Perlin>();
