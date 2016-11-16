@@ -33,7 +33,7 @@ float Tree::width() {
     } else if (type == this->TYPE_PINETREE) {
         return 3.5+sqrt(age)*0.15;
     } else if (type == this->TYPE_BUSH) {
-        return 1.0+sqrt(age)*0.02;
+        return 2.0+sqrt(age)*0.05;
     }
     return 0.0;
 }
@@ -70,17 +70,36 @@ int Tree::strengh() {
     return age;
 }
 
+float Tree::lifeOdds(float height, float soil, float flowmap) {
+    float odds = 1.0;
+    if (type == this->TYPE_APPLETREE) {
+        odds *= 1.0-std::min(std::max(height-50.0,0.0)/20.0,1.0);
+        odds *= std::min(std::max(soil-1.0,0.0),1.0);
+        odds *= std::min(std::max(std::sqrt(flowmap)-0.03,0.0)*1000,1.0);
+    } else if (type == this->TYPE_PINETREE) {
+        odds *= std::min(std::max(height-40.0,0.0)/20.0,1.0);
+        odds *= std::min(std::max(soil-1.5,0.0),1.0);
+        odds *= std::min(std::max(std::sqrt(flowmap)-0.02,0.0)*500,1.0);
+    } else if (type == this->TYPE_BUSH) {
+        odds *= std::min(std::max(soil-1.0,0.0),1.0);
+        odds *= std::min(std::max(std::sqrt(flowmap)-0.01,0.0)*1000,1.0);
+        odds *= 0.7;
+    }
+    //std::cout << "Tree "<< type <<" - Flowmap : "<< sqrt(flowmap) <<" - Odds : "<< odds <<"...\n" << std::flush;
+    return odds;
+}
+
 Mesh Tree::toMesh() {
-    Mesh m;
+    Mesh m = Mesh();
 
     if (type == this->TYPE_APPLETREE) {
-        m = Mesh::makeCylinder(Point(0,0,0),width()*2.5,width()/3,20);
+        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*2.5,width()/3.0,20));
         m.merge(Mesh::makeSphere(Point(0,0,width()*2.5),width(),20));
     } else if (type == this->TYPE_PINETREE) {
-        m = Mesh::makeCylinder(Point(0,0,0),width()*0.5,width()/3,20);
+        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*0.5,width()/2.0,20));
         m.merge(Mesh::makeCone(Point(0,0,width()*0.5),width()*3.0,width(),20));
     } else if (type == this->TYPE_BUSH) {
-        m = Mesh::makeSphere(Point(0,0,0),width(),20);
+        m.merge(Mesh::makeSphere(Point(0,0,0),width(),20));
     }
     return m;
 }

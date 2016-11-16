@@ -72,6 +72,8 @@ public:
      */
     int strengh();
 
+    float lifeOdds(float height, float soil, float flowmap);
+
     /**
      * Renvoie un objet Mesh dépendant des caractéristiques de l'arbre.
      * La composition et les paramètres de l'objet Mesh sont déterminées selon la largeur et l'espèce de l'arbre.
