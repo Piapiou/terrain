@@ -5,19 +5,19 @@
 #include <point.h>
 
 /**
- * Représente un Triangle dans l'espace.
+ * Représente un triangle dans l'espace.
  */
 class Triangle
 {
 public:
 
     /**
-     * Instancie un Triangle dans l'espace.
+     * Instancie un triangle dans l'espace.
      */
     Triangle();
 
     /**
-     * Instancie un Triangle dans l'espace selon trois indices.
+     * Instancie un triangle dans l'espace selon trois indices.
      * Chaque indice corrsepond à un point du vecteur de l'ensemble des points.
      */
     Triangle(int i1, int i2, int i3);

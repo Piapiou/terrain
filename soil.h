@@ -5,13 +5,13 @@
 #include <terrain.h>
 
 /**
- * Représente la couche de Sédiments du terrain
+ * Représente la couche de sédiments du terrain
  */
 class Soil
 {
 public:
     /**
-     * Isntancie une couche de Sédiments
+     * Isntancie une couche de sédiments
      * @param T : Terrain à sédimenter
      * @param maxSoil : Hauteur maximum de la couche de sédiments
      * @param facteurDiffSoil : Rapport entre l'inclinaison du terrain et la quantité de sédiments présents

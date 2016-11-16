@@ -4,19 +4,19 @@
 #include <mesh.h>
 
 /**
- * Représente un Arbre.
+ * Représente un arbre.
  */
 class Tree
 {
 public:
 
     /**
-     * Instancie un Arbre.
+     * Instancie un arbre.
      */
     Tree();
 
     /**
-     * Instancie un Arbre selon ses caractéristiques.
+     * Instancie un arbre selon ses caractéristiques.
      * @param type : Espèce de l'arbre.
      * @param initAge : Âge initial de l'arbre.
      * @param x : Position en abscisse de l'arbre.

@@ -4,25 +4,25 @@
 #include <QVector3D>
 
 /**
- * Représente un Point dans l'espace.
+ * Représente un point dans l'espace.
  */
 class Point : public QVector3D
 {
 public:
 
     /**
-     * Instancie un Point dans l'espace.
+     * Instancie un point dans l'espace.
      */
     Point();
 
     /**
-     * Instancie un Point dans l'espace selon un vecteur à trois dimensions.
+     * Instancie un point dans l'espace selon un vecteur à trois dimensions.
      * @param p : Vecteur à 3 dimensions (abscisse, ordonnée, hauteur)
      */
     Point(const QVector3D p);
 
     /**
-     * Instancie un Point dans l'espace selon trois coordonnées
+     * Instancie un point dans l'espace selon trois coordonnées
      * @param x : Abscisse du point
      * @param y : Ordonnée du point
      * @param z : Hauteur du point
