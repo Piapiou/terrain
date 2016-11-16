@@ -33,19 +33,19 @@ public:
     /**
      * Renvoie la largeur de l'arbre.
      * La largeur de l'arbre est calculée selon son espèce et son âge.
-     * @return Largeur de l'arbre.
+     * @return La largeur de l'arbre.
      */
     float width();
 
     /**
      * Renvoie la position en abscisse de l'arbre.
-     * @return Position en abscisse de l'arbre.
+     * @return La position en abscisse de l'arbre.
      */
     int getX();
 
     /**
      * Renvoie la position en ordonnée de l'arbre.
-     * @return Position en ordonnée de l'arbre.
+     * @return La position en ordonnée de l'arbre.
      */
     int getY();
 
@@ -56,28 +56,36 @@ public:
 
     /**
      * Renvoie le niveau de maladie de l'arbre.
-     * @return Niveau de maladie de l'arbre.
+     * @return Le niveau de maladie de l'arbre.
      */
     int getSickness();
 
     /**
      * Renvoie l'espèce de l'arbre.
-     * @return Constante correspondant à l'espèce de l'arbre.
+     * @return Une constante correspondant à l'espèce de l'arbre.
      */
     int getType();
 
     /**
      * Renvoie le potentiel de survie de l'arbre.
-     * @return Potentiel de survie de l'arbre.
+     * @return Le potentiel de survie de l'arbre.
      */
     int strengh();
 
+    /**
+     * Renvoie la probabilité d'existence de l'arbre.
+     * La probabilité d'existence correspond aux chances d'un arbre d'exister selon un certain nombre de conditions de terrain.
+     * @param height : Altitude du terrain.
+     * @param soil : Hauteur de la couche de sédiments.
+     * @param flowmap : Taux d'humidité.
+     * @return Une probabilité entre 0 et 1.
+     */
     float lifeOdds(float height, float soil, float flowmap);
 
     /**
      * Renvoie un objet Mesh dépendant des caractéristiques de l'arbre.
      * La composition et les paramètres de l'objet Mesh sont déterminées selon la largeur et l'espèce de l'arbre.
-     * @return Objet Mesh.
+     * @return Un objet Mesh.
      */
     Mesh toMesh();
 

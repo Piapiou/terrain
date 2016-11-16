@@ -13,7 +13,6 @@ public:
     Ecosystem();
     void init(int n, Terrain * T);
     void step();
-    void plant(int x, int y, int age, int type);
     void exportImg(QString path);
     Mesh generateMesh();
 
