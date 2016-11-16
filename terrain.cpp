@@ -96,18 +96,45 @@ Point* Terrain::getOrigin() {
     return &a;
 }
 
-void Terrain::simulateEcosystem(int time) {
+void Terrain::simulateEcosystem(int time, int nbTree) {
 
     std::cout <<"Start generating Ecosystem\n" << std::flush;
-    es.init(1000,this);
+    es.init(nbTree,this);
     es.exportImg(QString::asprintf("C:/Users/toshiba/Desktop/ES/eco0.bmp"));
+    std::cout <<"Exported C:/Users/toshiba/Desktop/ES/eco0.bmp\n" << std::flush;
 
     std::cout <<"Simulating Ecosystem\n" << std::flush;
     for (int i = 0; i < time; i++) {
         es.step();
-        if (i%10 == 9)
+        if (i%10 == 9) {
             es.exportImg(QString::asprintf("C:/Users/toshiba/Desktop/ES/eco%d.bmp",i+1));
+            std::cout <<"Exported C:/Users/toshiba/Desktop/ES/eco"<< i+1 <<".bmp\n" << std::flush;
+        }
     }
+}
+
+Mesh Terrain::bedRockMesh() {
+
+    std::cout << "Building Bedrock Mesh...\n" <<  std::flush;
+    Mesh m = Mesh();
+
+    int i = 0;
+    for (int j = 0; j < width; j++) {
+        m.addVertice(Point((b.x()-a.x())*((float)i/length)+a.x(),(b.y()-a.y())*((float)j/width)+a.y(), a.z()+bedrock[j]+0.01));
+    }
+
+    for (int i = 1; i < length; i++) {
+        int j = 0;
+
+        m.addVertice(Point((b.x()-a.x())*((float)i/length)+a.x(),(b.y()-a.y())*((float)j/width)+a.y(), a.z()+bedrock[i*length]+0.01));
+        for (int j = 1; j < width; j++) {
+            std::cout << std::flush;
+            m.addVertice(Point((b.x()-a.x())*((float)i/length)+a.x(),(b.y()-a.y())*((float)j/width)+a.y(), a.z()+bedrock[j+i*length]+0.01));
+            m.addTriangle(Triangle((i-1)*width+j-1,i*width+j,i*width+j-1));
+            m.addTriangle(Triangle((i-1)*width+j-1,(i-1)*width+j,i*width+j));
+        }
+    }
+    return m;
 }
 
 Mesh Terrain::toMesh() {
@@ -134,6 +161,10 @@ Mesh Terrain::toMesh() {
     return m;
 }
 
+Mesh Terrain::getESMesh() {
+    return es.generateMesh();
+}
+
 void Terrain::saveHeightImg(QString s) {
 
     float max = 0.0;
@@ -158,11 +189,18 @@ void Terrain::saveSoilImg(QString s) {
 
     std::cout << "Export Soil img...\n" <<  std::flush;
 
-    QImage img = QImage(length,width,QImage::Format_RGB32);
-
+    float max = 0;
     for(int i = 0; i < length; i++){
         for(int j = 0; j < width; j++){
-            img.setPixelColor(i,j,QColor(soil[i*width+j],0,0));
+            max = std::max(soil[i*width+j],max);
+        }
+    }
+
+    QImage img = QImage(length,width,QImage::Format_RGB32);
+
+    for(int i = 0; i < width; i++){
+        for(int j = 0; j < length; j++){
+            img.setPixelColor(i,j,QColor(soil[j*width+i]/max*255,0,0));
         }
     }
     img.save(s);
@@ -174,9 +212,9 @@ void Terrain::saveFlowmapImg(QString s) {
 
     QImage img = QImage(length,width,QImage::Format_RGB32);
 
-    for(int i = 0; i < length; i++){
-        for(int j = 0; j < width; j++){
-            img.setPixelColor(i,j,QColor(0,0,flowmap[i*width+j]*255));
+    for(int i = 0; i < width; i++){
+        for(int j = 0; j < length; j++){
+            img.setPixelColor(i,j,QColor(0,0,flowmap[j*width+i]*255));
         }
     }
     img.save(s);

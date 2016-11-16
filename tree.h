@@ -16,6 +16,7 @@ public:
     int getSickness();
     int getType();
     int strengh();
+    float lifeOdds(float height, float soil, float flowmap);
     Mesh toMesh();
 
     static const int TYPE_APPLETREE = 0;

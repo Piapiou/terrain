@@ -181,7 +181,7 @@ Mesh Mesh::makeCone(const Point center, float height, float rayon, int pointByAr
 }
 
 Mesh Mesh::operator=(const Mesh &rhs)
-{    
+{
     Mesh m = Mesh();
     m.vertices = QVector<Point>(rhs.vertices);
     m.triangles = QVector<Triangle>(rhs.triangles);

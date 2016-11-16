@@ -29,9 +29,11 @@ public:
     float getBedrockAt(int i, int j);
     float getSoilAmountAt(int i, int j);
     float getSoilLevelAt(int i, int j);
-    void simulateEcosystem(int time);
+    void simulateEcosystem(int time, int nbTree);
     Point* getOrigin();
     Mesh toMesh();
+    Mesh bedRockMesh();
+    Mesh getESMesh();
     void saveHeightImg(QString s);
     void saveSoilImg(QString s);
     void saveFlowmapImg(QString s);
