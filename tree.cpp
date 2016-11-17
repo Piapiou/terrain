@@ -93,13 +93,13 @@ Mesh Tree::toMesh() {
     Mesh m = Mesh();
 
     if (type == this->TYPE_APPLETREE) {
-        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*2.5,width()/3.0,20));
-        m.merge(Mesh::makeSphere(Point(0,0,width()*2.5),width(),20));
+        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*2.5,width()/3.0,10));
+        m.merge(Mesh::makeSphere(Point(0,0,width()*2.5),width(),10));
     } else if (type == this->TYPE_PINETREE) {
-        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*0.5,width()/2.0,20));
-        m.merge(Mesh::makeCone(Point(0,0,width()*0.5),width()*3.0,width(),20));
+        m.merge(Mesh::makeCylinder(Point(0,0,0),width()*0.5,width()/2.0,10));
+        m.merge(Mesh::makeCone(Point(0,0,width()*0.5),width()*3.0,width(),10));
     } else if (type == this->TYPE_BUSH) {
-        m.merge(Mesh::makeSphere(Point(0,0,0),width(),20));
+        m.merge(Mesh::makeSphere(Point(0,0,0),width(),10));
     }
     return m;
 }
