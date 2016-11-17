@@ -4,9 +4,9 @@
 #include <QMainWindow>
 #include <QObject>
 #include <QVector>
-#include "point.h"
+#include <point.h>
 #include <QMatrix4x4>
-#include "triangle.h"
+#include <triangle.h>
 #include <QSharedDataPointer>
 #include <QWidget>
 

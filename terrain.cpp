@@ -177,9 +177,9 @@ void Terrain::saveHeightImg(QString s) {
     std::cout << "Export height img...\n" <<  std::flush;
     QImage img = QImage(length,width,QImage::Format_RGB32);
 
-    for(int i = 0; i < length; i++){
-        for(int j = 0; j < width; j++){
-            img.setPixelColor(i,j,QColor((bedrock[i*width+j]+soil[i*width+j])/max*255,(bedrock[i*width+j]+soil[i*width+j])/max*255,(bedrock[i*width+j]+soil[i*width+j])/max*255));
+    for(int i = 0; i < width; i++){
+        for(int j = 0; j < length; j++){
+            img.setPixelColor(i,j,QColor((bedrock[j*width+i]+soil[j*width+i])/max*255,(bedrock[j*width+i]+soil[j*width+i])/max*255,(bedrock[j*width+i]+soil[j*width+i])/max*255));
         }
     }
     img.save(s);
