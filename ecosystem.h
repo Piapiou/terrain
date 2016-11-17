@@ -49,7 +49,7 @@ public:
     /**
      * Génère une image représentant la répartition de la végétation.
      * Chaque type d'arbre est représenté sur la carte par une couleur différente.
-     * @param Chemin du dossier d'enregistrement de l'image.
+     * @param path : Chemin du dossier d'enregistrement de l'image.
      */
     void exportImg(QString path);
 
