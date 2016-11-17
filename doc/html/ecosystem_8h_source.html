@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project:  Fichier source de terrain/ecosystem.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ecosystem_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">ecosystem.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ecosystem_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ECOSYSTEM_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ECOSYSTEM_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="tree_8h.html">tree.h</a>&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">class </span><a class="code" href="class_terrain.html">Terrain</a>;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_ecosystem.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_ecosystem.html">Ecosystem</a></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_ecosystem.html#aad52d5b02f1e2f0ffd16c72825dee140">Ecosystem</a>();</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ecosystem.html#ab5509ab8fc35c0848170611324c89c88">init</a>(<span class="keywordtype">int</span> n, <a class="code" href="class_terrain.html">Terrain</a> * T);</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ecosystem.html#a2254e1dffec6550ea1efa9cb5f67c5d8">step</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ecosystem.html#af0d2e7fcf3b419bf9e608679f8608b7f">plant</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> age, <span class="keywordtype">int</span> type);</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_ecosystem.html#a8b4e3dd69321f336e75c3a89c89d00a2">exportImg</a>(QString path);</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_mesh.html">Mesh</a> <a class="code" href="class_ecosystem.html#a5a6037126723837297793e15db6c75fa">generateMesh</a>();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    QVector&lt;Tree&gt; VT;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_terrain.html">Terrain</a> * T;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // ECOSYSTEM_H</span></div><div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">Représente un maillage d&amp;#39;objet tridimensionnel. </div><div class="ttdef"><b>Definition:</b> mesh.h:16</div></div>
+<div class="ttc" id="class_terrain_html"><div class="ttname"><a href="class_terrain.html">Terrain</a></div><div class="ttdoc">Représente un terrain. </div><div class="ttdef"><b>Definition:</b> terrain.h:18</div></div>
+<div class="ttc" id="class_ecosystem_html_af0d2e7fcf3b419bf9e608679f8608b7f"><div class="ttname"><a href="class_ecosystem.html#af0d2e7fcf3b419bf9e608679f8608b7f">Ecosystem::plant</a></div><div class="ttdeci">void plant(int x, int y, int age, int type)</div><div class="ttdoc">Ajoute un arbre à la couche de végétation. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:55</div></div>
+<div class="ttc" id="class_ecosystem_html_aad52d5b02f1e2f0ffd16c72825dee140"><div class="ttname"><a href="class_ecosystem.html#aad52d5b02f1e2f0ffd16c72825dee140">Ecosystem::Ecosystem</a></div><div class="ttdeci">Ecosystem()</div><div class="ttdoc">Instancie une couche de végétation. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:8</div></div>
+<div class="ttc" id="tree_8h_html"><div class="ttname"><a href="tree_8h.html">tree.h</a></div></div>
+<div class="ttc" id="class_ecosystem_html_a2254e1dffec6550ea1efa9cb5f67c5d8"><div class="ttname"><a href="class_ecosystem.html#a2254e1dffec6550ea1efa9cb5f67c5d8">Ecosystem::step</a></div><div class="ttdeci">void step()</div><div class="ttdoc">Incrémente le cycle de vie de la végétation. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:25</div></div>
+<div class="ttc" id="class_ecosystem_html"><div class="ttname"><a href="class_ecosystem.html">Ecosystem</a></div><div class="ttdoc">Représente la couche de végétation du terrain. </div><div class="ttdef"><b>Definition:</b> ecosystem.h:13</div></div>
+<div class="ttc" id="class_ecosystem_html_a5a6037126723837297793e15db6c75fa"><div class="ttname"><a href="class_ecosystem.html#a5a6037126723837297793e15db6c75fa">Ecosystem::generateMesh</a></div><div class="ttdeci">Mesh generateMesh()</div><div class="ttdoc">Renvoie un objet Mesh dépendant du vecteur d&amp;#39;arbres. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:92</div></div>
+<div class="ttc" id="class_ecosystem_html_a8b4e3dd69321f336e75c3a89c89d00a2"><div class="ttname"><a href="class_ecosystem.html#a8b4e3dd69321f336e75c3a89c89d00a2">Ecosystem::exportImg</a></div><div class="ttdeci">void exportImg(QString path)</div><div class="ttdoc">Génère une image représentant la répartition de la végétation. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:73</div></div>
+<div class="ttc" id="class_ecosystem_html_ab5509ab8fc35c0848170611324c89c88"><div class="ttname"><a href="class_ecosystem.html#ab5509ab8fc35c0848170611324c89c88">Ecosystem::init</a></div><div class="ttdeci">void init(int n, Terrain *T)</div><div class="ttdoc">Initialise la couche de végétation. </div><div class="ttdef"><b>Definition:</b> ecosystem.cpp:14</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6f8d5bad4f21777447ce756f026709af.html">terrain</a></li><li class="navelem"><a class="el" href="ecosystem_8h.html">ecosystem.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
+</body>
+</html>
