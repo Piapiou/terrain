@@ -41,7 +41,9 @@ public:
     int z();
 
     /**
-     * Définission de l'égalité entre deux triangles.
+     * Définission de l'affectation d'un triangle.
+     * @param t : Triangle à affecter.
+     * @return Un triange.
      */
     Triangle operator=(Triangle t);
 
