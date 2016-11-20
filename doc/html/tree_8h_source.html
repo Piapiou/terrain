@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.12"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project:  Fichier source de terrain/tree.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.12 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('tree_8h_source.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tree.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="tree_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TREE_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TREE_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mesh_8h.html">mesh.h</a>&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_tree.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_tree.html">Tree</a></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_tree.html#ad376a7c639d857312f5de2ef47482f68">Tree</a>();</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_tree.html#ad376a7c639d857312f5de2ef47482f68">Tree</a>(<span class="keywordtype">int</span> type, <span class="keywordtype">int</span> initAge, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a909154f053072fd197a3369816ce8494">life</a>();</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_tree.html#a57a620c5023a2f27a7480306a6cd0370">width</a>();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tree.html#af72733a6e1b3a35e88f219c6a6fa9f58">getX</a>();</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a32d499d69a006247599939615d05637a">getY</a>();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_tree.html#a8540b9767d9411b71bb14f72d9e921e5">sick</a>();</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a2d1ff3651954fbf3401f4b339c81a738">getSickness</a>();</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a188863c38200d02f417acb912d983e30">getType</a>();</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a83abfcae4768e21bfa460d0d8a98c30a">strengh</a>();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="class_tree.html#adff999059c34b91cb18fe1398c16c846">lifeOdds</a>(<span class="keywordtype">float</span> height, <span class="keywordtype">float</span> soil, <span class="keywordtype">float</span> flowmap);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_mesh.html">Mesh</a> <a class="code" href="class_tree.html#acf5863895c1e49c1a03cc528a7dbf93c">toMesh</a>();</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_tree.html#a02d0b4e962ec5d7a79bf33979ef87c8c">   95</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a02d0b4e962ec5d7a79bf33979ef87c8c">TYPE_APPLETREE</a> = 0;</div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_tree.html#a5cf4a63a1e41c30c47c72cb3cbda41b2">   99</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a5cf4a63a1e41c30c47c72cb3cbda41b2">TYPE_PINETREE</a> = 1;</div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="class_tree.html#a46eaaaf40489377b6f12b0051674ae3e">  103</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="class_tree.html#a46eaaaf40489377b6f12b0051674ae3e">TYPE_BUSH</a> = 2;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> type;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> age;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">int</span> x;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">int</span> y;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> sickness;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif // TREE_H</span></div><div class="ttc" id="class_mesh_html"><div class="ttname"><a href="class_mesh.html">Mesh</a></div><div class="ttdoc">Représente un maillage d&amp;#39;objet tridimensionnel. </div><div class="ttdef"><b>Definition:</b> mesh.h:16</div></div>
+<div class="ttc" id="class_tree_html_af72733a6e1b3a35e88f219c6a6fa9f58"><div class="ttname"><a href="class_tree.html#af72733a6e1b3a35e88f219c6a6fa9f58">Tree::getX</a></div><div class="ttdeci">int getX()</div><div class="ttdoc">Renvoie la position en abscisse de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:41</div></div>
+<div class="ttc" id="class_tree_html_a46eaaaf40489377b6f12b0051674ae3e"><div class="ttname"><a href="class_tree.html#a46eaaaf40489377b6f12b0051674ae3e">Tree::TYPE_BUSH</a></div><div class="ttdeci">static const int TYPE_BUSH</div><div class="ttdoc">Constante d&amp;#39;espèce désignant un buisson. </div><div class="ttdef"><b>Definition:</b> tree.h:103</div></div>
+<div class="ttc" id="class_tree_html_a2d1ff3651954fbf3401f4b339c81a738"><div class="ttname"><a href="class_tree.html#a2d1ff3651954fbf3401f4b339c81a738">Tree::getSickness</a></div><div class="ttdeci">int getSickness()</div><div class="ttdoc">Renvoie le niveau de maladie de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:53</div></div>
+<div class="ttc" id="class_tree_html_a5cf4a63a1e41c30c47c72cb3cbda41b2"><div class="ttname"><a href="class_tree.html#a5cf4a63a1e41c30c47c72cb3cbda41b2">Tree::TYPE_PINETREE</a></div><div class="ttdeci">static const int TYPE_PINETREE</div><div class="ttdoc">Constante d&amp;#39;espèce désignant un pin. </div><div class="ttdef"><b>Definition:</b> tree.h:99</div></div>
+<div class="ttc" id="class_tree_html_a57a620c5023a2f27a7480306a6cd0370"><div class="ttname"><a href="class_tree.html#a57a620c5023a2f27a7480306a6cd0370">Tree::width</a></div><div class="ttdeci">float width()</div><div class="ttdoc">Renvoie la largeur de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:30</div></div>
+<div class="ttc" id="mesh_8h_html"><div class="ttname"><a href="mesh_8h.html">mesh.h</a></div></div>
+<div class="ttc" id="class_tree_html_a909154f053072fd197a3369816ce8494"><div class="ttname"><a href="class_tree.html#a909154f053072fd197a3369816ce8494">Tree::life</a></div><div class="ttdeci">void life()</div><div class="ttdoc">Incrémente le cycle de vie de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:18</div></div>
+<div class="ttc" id="class_tree_html_a8540b9767d9411b71bb14f72d9e921e5"><div class="ttname"><a href="class_tree.html#a8540b9767d9411b71bb14f72d9e921e5">Tree::sick</a></div><div class="ttdeci">void sick()</div><div class="ttdoc">Incrémente le niveau de maladie de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:49</div></div>
+<div class="ttc" id="class_tree_html_acf5863895c1e49c1a03cc528a7dbf93c"><div class="ttname"><a href="class_tree.html#acf5863895c1e49c1a03cc528a7dbf93c">Tree::toMesh</a></div><div class="ttdeci">Mesh toMesh()</div><div class="ttdoc">Renvoie un objet Mesh dépendant des caractéristiques de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:92</div></div>
+<div class="ttc" id="class_tree_html_a188863c38200d02f417acb912d983e30"><div class="ttname"><a href="class_tree.html#a188863c38200d02f417acb912d983e30">Tree::getType</a></div><div class="ttdeci">int getType()</div><div class="ttdoc">Renvoie l&amp;#39;espèce de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:57</div></div>
+<div class="ttc" id="class_tree_html_adff999059c34b91cb18fe1398c16c846"><div class="ttname"><a href="class_tree.html#adff999059c34b91cb18fe1398c16c846">Tree::lifeOdds</a></div><div class="ttdeci">float lifeOdds(float height, float soil, float flowmap)</div><div class="ttdoc">Renvoie la probabilité d&amp;#39;existence de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:73</div></div>
+<div class="ttc" id="class_tree_html"><div class="ttname"><a href="class_tree.html">Tree</a></div><div class="ttdoc">Représente un arbre. </div><div class="ttdef"><b>Definition:</b> tree.h:9</div></div>
+<div class="ttc" id="class_tree_html_ad376a7c639d857312f5de2ef47482f68"><div class="ttname"><a href="class_tree.html#ad376a7c639d857312f5de2ef47482f68">Tree::Tree</a></div><div class="ttdeci">Tree()</div><div class="ttdoc">Instancie un arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:5</div></div>
+<div class="ttc" id="class_tree_html_a02d0b4e962ec5d7a79bf33979ef87c8c"><div class="ttname"><a href="class_tree.html#a02d0b4e962ec5d7a79bf33979ef87c8c">Tree::TYPE_APPLETREE</a></div><div class="ttdeci">static const int TYPE_APPLETREE</div><div class="ttdoc">Constante d&amp;#39;espèce désignant un pommier. </div><div class="ttdef"><b>Definition:</b> tree.h:95</div></div>
+<div class="ttc" id="class_tree_html_a83abfcae4768e21bfa460d0d8a98c30a"><div class="ttname"><a href="class_tree.html#a83abfcae4768e21bfa460d0d8a98c30a">Tree::strengh</a></div><div class="ttdeci">int strengh()</div><div class="ttdoc">Renvoie le potentiel de survie de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:61</div></div>
+<div class="ttc" id="class_tree_html_a32d499d69a006247599939615d05637a"><div class="ttname"><a href="class_tree.html#a32d499d69a006247599939615d05637a">Tree::getY</a></div><div class="ttdeci">int getY()</div><div class="ttdoc">Renvoie la position en ordonnée de l&amp;#39;arbre. </div><div class="ttdef"><b>Definition:</b> tree.cpp:45</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_6f8d5bad4f21777447ce756f026709af.html">terrain</a></li><li class="navelem"><a class="el" href="tree_8h.html">tree.h</a></li>
+    <li class="footer">Généré par
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.12 </li>
+  </ul>
+</div>
+</body>
+</html>
