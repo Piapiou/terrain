@@ -74,6 +74,8 @@ void Ecosystem::exportImg(QString path) {
     QImage img = QImage(T->getWidth()*10,T->getLength()*10,QImage::Format_RGB32);
     QPainter p(&img);
     p.setPen( QPen( Qt::white, 3.0 ) );
+    p.setBrush(QBrush( Qt::white) );
+    p.drawRect(0,0,img.width(),img.height());
     for (int i = 0; i < VT.size(); i++) {
         if (VT[i].getType() == Tree::TYPE_APPLETREE)
             p.setPen( QPen( Qt::red, 2.0 ) );

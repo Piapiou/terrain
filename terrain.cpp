@@ -2,6 +2,7 @@
 #include <soil.h>
 #include <math.h>
 #include <QImage>
+#include <time.h>
 #include <iostream>
 #include <turbulence.h>
 
