@@ -106,6 +106,7 @@ void Terrain::simulateEcosystem(int time, int nbTree) {
 
     std::cout <<"Simulating Ecosystem\n" << std::flush;
     for (int i = 0; i < time; i++) {
+
         es.step();
         if (i%10 == 9) {
             es.exportImg(QString::asprintf("C:/Users/toshiba/Desktop/ES/eco%d.bmp",i+1));

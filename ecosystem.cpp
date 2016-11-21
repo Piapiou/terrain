@@ -4,6 +4,7 @@
 #include <point.h>
 #include <terrain.h>
 #include <iostream>
+#include <time.h>
 
 Ecosystem::Ecosystem()
 {
@@ -23,7 +24,10 @@ void Ecosystem::init(int n, Terrain * T) {
 }
 
 void Ecosystem::step() {
+
     for (int i = 0; i < VT.size(); i++) {
+
+        clock_t tStart = clock();
         VT[i].life();
         float x1 = (float)VT[i].getX()*T->getWidthRatio();
         float y1 = (float)VT[i].getY()*T->getLengthRatio();
@@ -31,7 +35,7 @@ void Ecosystem::step() {
         for (int j = 0; j < VT.size(); j++) {
             float x2 = (float)VT[j].getX()*T->getWidthRatio();
             float y2 = (float)VT[j].getY()*T->getLengthRatio();
-            if (j != i && pow((x2-x1),2.0)+pow((y2-y1),2.0) < pow(VT[i].width()+VT[j].width(),2.0) && VT[i].strengh() < VT[j].strengh()) {
+            if (j != i && pow((x2-x1),2.0)+pow((y2-y1),2.0) < pow((VT[i].width()+VT[j].width())*1.5,2.0) && VT[i].strengh() < VT[j].strengh()) {
                 VT[i].sick();
             }
         }
@@ -42,6 +46,7 @@ void Ecosystem::step() {
             int nx = (x1+cos(angle)*VT[i].width()*dist)/T->getWidthRatio();
             int ny = (y1+sin(angle)*VT[i].width()*dist)/T->getLengthRatio();
             if (nx > 0 && nx < T->getWidth() && ny > 0 && ny < T->getLength()) {
+
                 plant(nx,ny,0,VT[i].getType());
             }
         }
@@ -61,7 +66,7 @@ void Ecosystem::plant(int x, int y, int age, int type) {
     for (int j = 0; canPlant && j < VT.size(); j++) {
         float x2 = (float)VT[j].getX()*T->getWidthRatio();
         float y2 = (float)VT[j].getY()*T->getLengthRatio();
-        if (pow((x2-x1),2.0)+pow((y2-y1),2.0) < pow(t.width()+VT[j].width(),2.0)) {
+        if (pow((x2-x1),2.0)+pow((y2-y1),2.0) < pow((t.width()+VT[j].width())*1.5,2.0)) {
             canPlant = false;
         }
     }
@@ -71,19 +76,22 @@ void Ecosystem::plant(int x, int y, int age, int type) {
 }
 
 void Ecosystem::exportImg(QString path) {
-    QImage img = QImage(T->getWidth()*10,T->getLength()*10,QImage::Format_RGB32);
+    QImage img = QImage(T->getWidth()*2,T->getLength()*2,QImage::Format_RGB32);
     QPainter p(&img);
-    p.setPen( QPen( Qt::white, 3.0 ) );
-    p.setBrush(QBrush( Qt::white) );
-    p.drawRect(0,0,img.width(),img.height());
     for (int i = 0; i < VT.size(); i++) {
-        if (VT[i].getType() == Tree::TYPE_APPLETREE)
+        if (VT[i].getType() == Tree::TYPE_APPLETREE) {
             p.setPen( QPen( Qt::red, 2.0 ) );
-        if (VT[i].getType() == Tree::TYPE_PINETREE)
+            p.setBrush(QBrush( Qt::red) );
+        }
+        if (VT[i].getType() == Tree::TYPE_PINETREE) {
             p.setPen( QPen( Qt::green, 2.0 ) );
-        if (VT[i].getType() == Tree::TYPE_BUSH)
+            p.setBrush(QBrush( Qt::green) );
+        }
+        if (VT[i].getType() == Tree::TYPE_BUSH) {
             p.setPen( QPen( Qt::blue, 2.0 ) );
-        p.drawEllipse(QPoint(VT[i].getX()*10,VT[i].getY()*10),(int)VT[i].width()/T->getLengthRatio()*10,(int)VT[i].width()/T->getLengthRatio()*10);
+            p.setBrush(QBrush( Qt::blue) );
+        }
+        p.drawEllipse(QPoint(VT[i].getX()*2,VT[i].getY()*2),(int)VT[i].width()/T->getLengthRatio()*2,(int)VT[i].width()/T->getLengthRatio()*2);
     }
     p.end();
 

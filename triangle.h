@@ -67,7 +67,7 @@ public:
      * @param i : Indice du point opposé
      */
     void setAdj3(int i);
-:
+
     /**
      * Retourne le point opposé d'un triangle adjacent
      * @param nt : Indice du triangle adjacent

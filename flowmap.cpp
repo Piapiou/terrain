@@ -9,6 +9,7 @@ Flowmap::Flowmap(Terrain * T, int nbIteration)
 
 void Flowmap::generateFlowMap() {
 
+
     for (int k = 0; k < nbIteration; k++) {
         for (int i = 0; i < T->getWidth(); i++) {
             for (int j = 0; j < T->getLength(); j++) {
